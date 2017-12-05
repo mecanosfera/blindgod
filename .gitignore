@@ -1,0 +1,13 @@
+node_modules/
+
+builds/blindgod-darwin-x64\.zip
+
+builds/blindgod-darwin-x64/
+
+builds/blindgod-linux-x64\.zip
+
+builds/blindgod-linux-x64/
+
+builds/blindgod-win32-ia32\.zip
+
+builds/blindgod-win32-ia32/
