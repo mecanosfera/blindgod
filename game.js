@@ -225,8 +225,10 @@ Main.prototype = {
     layerFloor.resizeWorld();
     game.physics.arcade.enable(layerTablebookshelf);
     game.physics.arcade.enable(layerChairwall);
-    map.setCollisionByExclusion([10,16,17,18,22,27,37,47,48,64,151,161,48,49,83,598,599,630,631,660,661,662,663,897,898,2631,2632,2629,2630,263,264,265,897,898],true,layerTablebookshelf);
-    map.setCollisionByExclusion([10,16,17,18,22,27,37,47,48,64,151,161,48,49,83,598,599,630,631,660,661,662,663,897,898,2631,2632,2629,2630,263,264,265,897,898],true,layerChairwall);
+    map.setCollisionByExclusion([10,16,17,18,22,27,37,47,48,64,151,48,49,83,598,599,630,631,660,661,662,663,897,898,2631,2632,2629,2630,263,264,265,897,898],true,layerTablebookshelf);
+    map.setCollisionByExclusion([10,16,17,18,22,27,37,47,48,64,151,48,49,83,598,599,630,631,660,661,662,663,897,898,2631,2632,2629,2630,263,264,265,897,898],true,layerChairwall);
+    map.setCollision([147,161,162,163,164],layerChairwall);
+    map.setCollision([147,161,162,163,164],layerTablebookshelf);
 
     bloodGroup = game.add.group();
     wallsGroup = game.add.group();
@@ -338,15 +340,15 @@ function darknessUpdate(){
     var cX = (clight.pos().x);
     var cY = (clight.pos().y);
     var gradient = shadowTexture.context.createRadialGradient(
-      cX, cY, 32*0.75,
-      cX, cY, 32
+      cX, cY, 56*0.75,
+      cX, cY, 56
     );
     gradient.addColorStop(0, 'rgba(138, 132, 132,1.0)');
     gradient.addColorStop(1, 'rgba(255, 255, 255, 0.0)');
     // Draw circle of light
     shadowTexture.context.beginPath();
     shadowTexture.context.fillStyle = gradient;
-    shadowTexture.context.arc(cX, cY, 32, 0, Math.PI*2,false);
+    shadowTexture.context.arc(cX, cY, 64, 0, Math.PI*2,false);
     shadowTexture.context.fill();
   }
   for(let lights of lightSources){

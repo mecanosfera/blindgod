@@ -66,6 +66,9 @@ class Player extends Character{
       }
     }
     this.party.splice(index,1);
+    for(let i=0;i<this.party.length;i++){
+      this.party[i].index = i+1;
+    }
     characterLightSource.splice(lightIndex,1);
     stats.killed++;
     npc.sprite.kill();

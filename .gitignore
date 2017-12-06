@@ -11,3 +11,7 @@ builds/blindgod-linux-x64/
 builds/blindgod-win32-ia32\.zip
 
 builds/blindgod-win32-ia32/
+
+builds/blindgod-src\.zip
+
+*.tmp
